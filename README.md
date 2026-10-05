@@ -107,6 +107,13 @@ java -cp build/classes app.Main
 2. Select **File > Open Project** and navigate to the project directory.
 3. Right-click the project root and select **Run** (or press `F6`).
 
+### 🔑 First-Time Launch (Setup Wizard)
+When launching the application on a fresh clone:
+1. The **First-Time Setup Wizard** dialog automatically appears.
+2. Enter any Store Manager username, full name, and password (e.g. Username: `admin`, Password: `Admin123!`).
+3. Click **Create Account** and sign in with those credentials.
+4. The inventory catalog is automatically pre-seeded with sample organic supermarket products, ready for immediate exploration and testing.
+
 ---
 
 ## 🧪 Automated Testing
