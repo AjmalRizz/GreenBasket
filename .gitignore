@@ -1,0 +1,20 @@
+# NetBeans build output
+build/
+dist/
+nbproject/private/
+
+# Runtime data and backups
+*.dat
+*.dat.*
+*.bak
+*.ser
+
+# Root temporary scratch scripts
+/*_rendered.png
+CaptureScreenshots.java
+!docs/screenshots/*.png
+
+# OS / IDE junk
+.DS_Store
+Thumbs.db
+*.class

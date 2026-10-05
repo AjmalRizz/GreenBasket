@@ -1,0 +1,53 @@
+========================================================================
+       THE GREEN BASKET SUPERMARKET — INVENTORY SYSTEM v2.0
+========================================================================
+
+GETTING STARTED (FIRST-TIME RUN):
+------------------------------------------------------------------------
+When launching the application on a fresh installation with no existing
+database:
+1. The system automatically launches the "First-Time Setup" dialog.
+2. Enter your desired Store Manager username, full name, and a secure
+   password (minimum 8 characters, at least one letter and one number).
+3. Once created, sign in with your credentials to access the Dashboard.
+4. From the "Staff & Users" tab, the Store Manager can register
+   additional Sales Assistant or Store Manager accounts.
+
+SYSTEM ROLES & ACCESS CONTROL PRIVILEGES:
+------------------------------------------------------------------------
+1. Store Manager (Full System Privileges):
+   - Model Class: model.StoreManager (extends model.User)
+   - Privileges: Full Inventory CRUD (Add, Edit, Delete Products),
+                 Staff Management (Create & Delete Users),
+                 Stock In / Stock Out (Restocking & POS Checkout),
+                 Low Stock Reorder Alerts & Quick Restock,
+                 CSV Exports for Inventory and Stock Movement Audit Trail.
+
+2. Sales Assistant (Operational Privileges):
+   - Model Class: model.SalesAssistant (extends model.User)
+   - Privileges: Inventory Browsing & Multi-Criteria Search,
+                 Stock In (Supplier Deliveries),
+                 Point of Sale (Customer Checkout & Receipt Generation),
+                 Low Stock Reorder Alerts.
+   - Prohibited Operations: Cannot delete products, cannot create or
+     delete staff accounts. Enforced at both the UI and Service layer.
+
+========================================================================
+SECURITY & RELIABILITY HIGHLIGHTS:
+========================================================================
+• Cryptographic Password Security: PBKDF2 with HMAC-SHA256, unique per-user
+  cryptographic random salt (16 bytes), and 65,536 iterations.
+• Zero Hardcoded Credentials: No passwords or secret keys in source code.
+• Constant-Time Hash Verification: MessageDigest.isEqual defends against
+  timing side-channel attacks.
+• Account Lockout Defense: 5 consecutive failed login attempts trigger a
+  15-minute temporary lockout.
+• Deserialization Whitelist: JEP 290 class filtering prevents arbitrary
+  class instantiation during deserialization.
+• Atomic File Persistence: Data is written to temporary files and atomically
+  moved over the target, preventing file corruption on unexpected crashes.
+• Financial Precision: All monetary transactions and inventory valuations
+  use java.math.BigDecimal (no floating-point rounding errors).
+• CSV Formula Injection Defense: Exported cells starting with =, +, -, @
+  are automatically escaped.
+========================================================================
