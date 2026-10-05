@@ -8,7 +8,8 @@ When launching the application on a fresh installation with no existing
 database:
 1. The system automatically launches the "First-Time Setup" dialog.
 2. Enter your desired Store Manager username, full name, and a secure
-   password (minimum 8 characters, at least one letter and one number).
+   password (minimum 8 characters, at least one letter and one number;
+   e.g. Username: Ajmal, Password: ajmal@123).
 3. Once created, sign in with your credentials to access the Dashboard.
 4. From the "Staff & Users" tab, the Store Manager can register
    additional Sales Assistant or Store Manager accounts.

@@ -110,7 +110,7 @@ java -cp build/classes app.Main
 ### 🔑 First-Time Launch (Setup Wizard)
 When launching the application on a fresh clone:
 1. The **First-Time Setup Wizard** dialog automatically appears.
-2. Enter any Store Manager username, full name, and password (e.g. Username: `admin`, Password: `Admin123!`).
+2. Enter your Store Manager username, full name, and password (e.g. Username: `Ajmal`, Password: `ajmal@123`).
 3. Click **Create Account** and sign in with those credentials.
 4. The inventory catalog is automatically pre-seeded with sample organic supermarket products, ready for immediate exploration and testing.
 
